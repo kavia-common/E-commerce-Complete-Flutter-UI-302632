@@ -1,0 +1,2 @@
+/home/kavia/workspace/code-generation/E-commerce-Complete-Flutter-UI-302632/android/app/.cxx/Debug/z5r2m2gg/armeabi-v7a/CMakeFiles/edit_cache.dir
+/home/kavia/workspace/code-generation/E-commerce-Complete-Flutter-UI-302632/android/app/.cxx/Debug/z5r2m2gg/armeabi-v7a/CMakeFiles/rebuild_cache.dir

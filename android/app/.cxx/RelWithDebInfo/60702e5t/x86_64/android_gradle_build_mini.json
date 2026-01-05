@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/opt/flutter/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/opt/android-sdk-linux/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/home/kavia/workspace/code-generation/E-commerce-Complete-Flutter-UI-302632/android/app/.cxx/RelWithDebInfo/60702e5t/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/opt/android-sdk-linux/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/home/kavia/workspace/code-generation/E-commerce-Complete-Flutter-UI-302632/android/app/.cxx/RelWithDebInfo/60702e5t/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}
