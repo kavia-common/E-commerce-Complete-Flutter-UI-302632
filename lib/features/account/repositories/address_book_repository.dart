@@ -134,7 +134,7 @@ class LocalAddressBookRepository implements AddressBookRepository {
   Future<void> deleteAddress(String addressId) async {
     final List<Address> addresses = await listAddresses();
     final Address? toDelete =
-        addresses.where((a) => a.id == addressId).cast<Address?>().firstOrNull;
+        addresses.where((a) => a.id == addressId).firstOrNull;
     final List<Address> next =
         addresses.where((a) => a.id != addressId).toList();
 
@@ -165,6 +165,6 @@ class LocalAddressBookRepository implements AddressBookRepository {
   Future<void> clear() async => _local.writeAddresses(<Map<String, Object?>>[]);
 }
 
-extension on Iterable {
-  Object? get firstOrNull => isEmpty ? null : first;
+extension on Iterable<Address> {
+  Address? get firstOrNull => isEmpty ? null : first;
 }

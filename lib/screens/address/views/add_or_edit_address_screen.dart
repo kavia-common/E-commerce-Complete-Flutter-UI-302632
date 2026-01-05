@@ -34,7 +34,7 @@ class _AddOrEditAddressScreenState extends State<AddOrEditAddressScreen> {
     final vm = context.read<AddressBookViewModel>();
     final Address? existing = widget.addressId == null
         ? null
-        : vm.addresses.where((a) => a.id == widget.addressId).cast<Address?>().firstOrNull;
+        : vm.addresses.where((a) => a.id == widget.addressId).firstOrNull;
 
     _fullName = TextEditingController(text: existing?.fullName ?? '');
     _phone = TextEditingController(text: existing?.phoneNumber ?? '');
@@ -194,7 +194,6 @@ class _AddOrEditAddressScreenState extends State<AddOrEditAddressScreen> {
                               createdAt: isEdit
                                   ? (vm.addresses
                                           .where((a) => a.id == id)
-                                          .cast<Address?>()
                                           .firstOrNull
                                           ?.createdAt ??
                                       now)
@@ -230,6 +229,6 @@ class _AddOrEditAddressScreenState extends State<AddOrEditAddressScreen> {
   }
 }
 
-extension on Iterable {
-  Object? get firstOrNull => isEmpty ? null : first;
+extension on Iterable<Address> {
+  Address? get firstOrNull => isEmpty ? null : first;
 }
