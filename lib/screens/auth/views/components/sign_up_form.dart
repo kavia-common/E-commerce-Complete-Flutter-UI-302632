@@ -38,7 +38,7 @@ class SignUpForm extends StatelessWidget {
                         .textTheme
                         .bodyLarge!
                         .color!
-                        .withOpacity(0.3),
+                        .withValues(alpha: 0.3),
                     BlendMode.srcIn,
                   ),
                 ),

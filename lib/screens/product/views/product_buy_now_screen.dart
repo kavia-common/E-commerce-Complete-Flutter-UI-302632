@@ -18,10 +18,10 @@ class ProductBuyNowScreen extends StatefulWidget {
   const ProductBuyNowScreen({super.key});
 
   @override
-  _ProductBuyNowScreenState createState() => _ProductBuyNowScreenState();
+  State<ProductBuyNowScreen> createState() => ProductBuyNowScreenState();
 }
 
-class _ProductBuyNowScreenState extends State<ProductBuyNowScreen> {
+class ProductBuyNowScreenState extends State<ProductBuyNowScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,8 +52,13 @@ class _ProductBuyNowScreenState extends State<ProductBuyNowScreen> {
                 ),
                 IconButton(
                   onPressed: () {},
-                  icon: SvgPicture.asset("assets/icons/Bookmark.svg",
-                      color: Theme.of(context).textTheme.bodyLarge!.color),
+                  icon: SvgPicture.asset(
+                    "assets/icons/Bookmark.svg",
+                    colorFilter: ColorFilter.mode(
+                      Theme.of(context).textTheme.bodyLarge!.color!,
+                      BlendMode.srcIn,
+                    ),
+                  ),
                 ),
               ],
             ),
