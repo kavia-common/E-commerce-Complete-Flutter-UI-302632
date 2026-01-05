@@ -61,12 +61,13 @@ class LogInForm extends StatelessWidget {
                   height: 24,
                   width: 24,
                   colorFilter: ColorFilter.mode(
-                      Theme.of(context)
-                          .textTheme
-                          .bodyLarge!
-                          .color!
-                          .withOpacity(0.3),
-                      BlendMode.srcIn),
+                    Theme.of(context)
+                        .textTheme
+                        .bodyLarge!
+                        .color!
+                        .withValues(alpha: 0.3),
+                    BlendMode.srcIn,
+                  ),
                 ),
               ),
             ),

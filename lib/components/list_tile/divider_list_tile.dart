@@ -82,8 +82,9 @@ class DividerListTileWithTrilingText extends StatelessWidget {
                 SvgPicture.asset(
                   "assets/icons/miniRight.svg",
                   colorFilter: ColorFilter.mode(
-                      Theme.of(context).iconTheme.color!.withOpacity(0.4),
-                      BlendMode.srcIn),
+                    Theme.of(context).iconTheme.color!.withValues(alpha: 0.4),
+                    BlendMode.srcIn,
+                  ),
                 ),
               ],
             ),
