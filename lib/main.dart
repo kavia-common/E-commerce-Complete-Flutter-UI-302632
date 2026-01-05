@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:provider/provider.dart';
+import 'package:shop/features/account/account_providers.dart';
+import 'package:shop/features/account/viewmodels/locale_view_model.dart';
+import 'package:shop/l10n/app_localizations.dart';
 import 'package:shop/route/route_constants.dart';
 import 'package:shop/route/router.dart' as router;
 import 'package:shop/theme/app_theme.dart';
@@ -16,14 +21,30 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Shop Template by The Flutter Way',
-      theme: AppTheme.lightTheme(context),
-      // Dark theme is inclided in the Full template
-      themeMode: ThemeMode.light,
-      onGenerateRoute: router.generateRoute,
-      initialRoute: onbordingScreenRoute,
+    return AccountProviders(
+      child: Builder(
+        builder: (context) {
+          final Locale? locale = context.watch<LocaleViewModel?>()?.locale;
+
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Shop Template by The Flutter Way',
+            theme: AppTheme.lightTheme(context),
+            // Dark theme is inclided in the Full template
+            themeMode: ThemeMode.light,
+            onGenerateRoute: router.generateRoute,
+            initialRoute: onbordingScreenRoute,
+            locale: locale,
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: const [
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+          );
+        },
+      ),
     );
   }
 }

@@ -13,12 +13,18 @@ class ProductCard extends StatelessWidget {
     this.priceAfetDiscount,
     this.dicountpercent,
     required this.press,
+    this.isWishlisted,
+    this.onToggleWishlist,
   });
   final String image, brandName, title;
   final double price;
   final double? priceAfetDiscount;
   final int? dicountpercent;
   final VoidCallback press;
+
+  /// Optional wishlist hook (offline-first). If null, wishlist UI is hidden.
+  final bool? isWishlisted;
+  final VoidCallback? onToggleWishlist;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +62,37 @@ class ProductCard extends StatelessWidget {
                             fontWeight: FontWeight.w500),
                       ),
                     ),
-                  )
+                  ),
+                if (onToggleWishlist != null)
+                  Positioned(
+                    left: defaultPadding / 2,
+                    top: defaultPadding / 2,
+                    child: InkWell(
+                      onTap: onToggleWishlist,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(defaultBorderRadious),
+                      ),
+                      child: Container(
+                        height: 28,
+                        width: 28,
+                        decoration: BoxDecoration(
+                          color: Colors.white.withAlpha((0.9 * 255).round()),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(defaultBorderRadious),
+                          ),
+                        ),
+                        child: Icon(
+                          (isWishlisted ?? false)
+                              ? Icons.favorite
+                              : Icons.favorite_border,
+                          size: 16,
+                          color: (isWishlisted ?? false)
+                              ? errorColor
+                              : Colors.black.withAlpha((0.7 * 255).round()),
+                        ),
+                      ),
+                    ),
+                  ),
               ],
             ),
           ),

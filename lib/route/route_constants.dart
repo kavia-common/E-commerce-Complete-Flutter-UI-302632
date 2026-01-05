@@ -57,3 +57,8 @@ const String cartScreenRoute = "cart";
 const String paymentMethodScreenRoute = "payment_method";
 const String addNewCardScreenRoute = "add_new_card";
 const String thanksForOrderScreenRoute = "thanks_order";
+
+/// Offline-first profile/account additions
+const String wishlistScreenRoute = "wishlist";
+const String editProfileScreenRoute = "edit_profile";
+const String addOrEditAddressScreenRoute = "add_or_edit_address";

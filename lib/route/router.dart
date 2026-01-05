@@ -203,6 +203,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const UserInfoScreen(),
       );
+    case editProfileScreenRoute:
+      return MaterialPageRoute(
+        builder: (context) => const EditProfileScreen(),
+      );
     // case currentPasswordScreenRoute:
     //   return MaterialPageRoute(
     //     builder: (context) => const CurrentPasswordScreen(),
@@ -227,10 +231,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const NotificationOptionsScreen(),
       );
-    // case selectLanguageScreenRoute:
-    //   return MaterialPageRoute(
-    //     builder: (context) => const SelectLanguageScreen(),
-    //   );
+    case selectLanguageScreenRoute:
+      return MaterialPageRoute(
+        builder: (context) => const SelectLanguageScreen(),
+      );
     // case noAddressScreenRoute:
     //   return MaterialPageRoute(
     //     builder: (context) => const NoAddressScreen(),
@@ -238,6 +242,15 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case addressesScreenRoute:
       return MaterialPageRoute(
         builder: (context) => const AddressesScreen(),
+      );
+    case addOrEditAddressScreenRoute:
+      return MaterialPageRoute(
+        builder: (context) {
+          // Arguments (optional): addressId (String)
+          final Object? arg = settings.arguments;
+          final String? addressId = arg is String ? arg : null;
+          return AddOrEditAddressScreen(addressId: addressId);
+        },
       );
     // case addNewAddressesScreenRoute:
     //   return MaterialPageRoute(
@@ -270,6 +283,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case preferencesScreenRoute:
       return MaterialPageRoute(
         builder: (context) => const PreferencesScreen(),
+      );
+    case wishlistScreenRoute:
+      return MaterialPageRoute(
+        builder: (context) => const WishlistScreen(),
       );
     // case emptyPaymentScreenRoute:
     //   return MaterialPageRoute(

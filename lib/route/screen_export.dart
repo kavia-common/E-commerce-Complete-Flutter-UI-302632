@@ -26,3 +26,8 @@ export '/screens/wallet/views/empty_wallet_screen.dart';
 export '/screens/wallet/views/wallet_screen.dart';
 export '/screens/profile/views/profile_screen.dart';
 export '/screens/user_info/views/user_info_screen.dart';
+
+export '/screens/wishlist/views/wishlist_screen.dart';
+export '/screens/user_info/views/edit_profile_screen.dart';
+export '/screens/address/views/add_or_edit_address_screen.dart';
+export '/screens/language/views/select_language_screen.dart';
