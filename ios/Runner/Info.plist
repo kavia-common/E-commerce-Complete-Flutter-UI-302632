@@ -51,5 +51,11 @@
 	<string>https</string>
 	</array>
 
+	<!-- Image picking permissions (used by image_picker) -->
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs camera access to take your profile photo.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs photo library access to choose your profile photo.</string>
+
 </dict>
 </plist>
